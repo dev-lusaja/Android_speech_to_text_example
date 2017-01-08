@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TextToSpeech</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string-array name="options_language">
+        <item>Español</item>
+        <item>Frances</item>
+        <item>Portuges</item>
+    </string-array>
+    
+    <string-array name="spanish_numbers">
+        <item>cero</item>
+        <item>uno</item>
+        <item>dos</item>
+        <item>tres</item>
+        <item>cuatro</item>
+        <item>cinco</item>
+        <item>seis</item>
+        <item>siete</item>
+        <item>ocho</item>
+        <item>nueve</item>
+        <item>diez</item>
+        <item>once</item>
+        <item>doce</item>
+        <item>trece</item>
+        <item>catorce</item>
+        <item>quince</item>
+        <item>dieciseis</item>
+        <item>diecisiete</item>
+        <item>dieciocho</item>
+        <item>diecinueve</item>
+        <item>veinte</item>
+    </string-array>
+    
+    <string-array name="france_numbers">
+		<item>zéro</item>
+		<item>un</item>
+		<item>deux</item>
+		<item>trois</item>
+		<item>quatre</item>
+		<item>cinq</item>
+		<item>six</item>
+		<item>sept</item>
+		<item>huit</item>
+		<item>neuf</item>
+		<item>dix</item>
+		<item>onze</item>
+		<item>douze</item>
+		<item>treize</item>
+		<item>quatorze</item>
+		<item>quinze</item>
+		<item>seize</item>
+		<item>sept</item>
+		<item>huit</item>
+		<item>neuf</item>
+    </string-array>
+
+    <string-array name="portuges_numbers">
+        <item>zero</item>
+		<item>um</item>
+		<item>dois</item>
+		<item>três</item>
+		<item>quatro</item>
+		<item>cinco</item>
+		<item>seis</item>
+		<item>sete</item>
+		<item>oito</item>
+		<item>nove</item>
+		<item>dez</item>
+		<item>onze</item>
+		<item>doze</item>
+		<item>treze</item>
+		<item>quatorze</item>
+		<item>quinze</item>
+		<item>dezesseis</item>
+		<item>dezessete</item>
+		<item>dezoito</item>
+		<item>dezenove</item>
+		<item>vinte</item>
+    </string-array>
+</resources>
+
