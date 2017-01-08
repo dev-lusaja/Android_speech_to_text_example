@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
 	
 	TextToSpeech text_to_speech, speech_object;
 	EditText txt_value;
-	Button btn_speak;
+	Button btn_speak, btn_numbers;
 	Locale loc;
 	String[] ar;
 	 
@@ -38,19 +38,21 @@ public class MainActivity extends Activity {
     public TextToSpeech set_voice(TextToSpeech object){
     	Spinner spinner_voice=(Spinner) findViewById(R.id.options_language);
     	String voice_value = spinner_voice.getSelectedItem().toString();
-    	Toast.makeText(getApplicationContext(), voice_value,Toast.LENGTH_SHORT).show();
+    	String locale = "";
     	if (voice_value.equals("Español")){
   		  	loc = new Locale("es", "MEX");
   		  	object.setLanguage(loc);
   		    ar = getResources().getStringArray(R.array.spanish_numbers);
     	} else if (voice_value.equals("Frances")){
   		  	object.setLanguage(Locale.FRANCE);
-  		  ar = getResources().getStringArray(R.array.france_numbers);
+  		  	ar = getResources().getStringArray(R.array.france_numbers);
     	} else if (voice_value.equals("Portuges")){
-  		  	loc = new Locale("pt", "br");
+  		  	loc = new Locale("pt", "BR");
   		  	object.setLanguage(loc);
+  		  	System.out.printf("|",Locale.getAvailableLocales());
     		ar = getResources().getStringArray(R.array.portuges_numbers);
     	}
+    	Toast.makeText(getApplicationContext(), locale,Toast.LENGTH_SHORT).show();
     	return object;
     }
 	
@@ -62,9 +64,10 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        txt_value=(EditText)findViewById(R.id.txt_value);
-        btn_speak=(Button)findViewById(R.id.btn_speak);
-      
+        
+        txt_value = (EditText)findViewById(R.id.txt_value);
+        btn_numbers = (Button)findViewById(R.id.btn_numbers);
+        btn_speak = (Button)findViewById(R.id.btn_speak);
         
         /* Cargar Spinner */
     	Spinner spinner = (Spinner) findViewById(R.id.options_language);
@@ -77,7 +80,7 @@ public class MainActivity extends Activity {
         text_to_speech = speech_object();
         
         /* Button Listener */
-        btn_speak.setOnClickListener(new View.OnClickListener() {
+        btn_numbers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
             	//String toSpeak = txt_value.getText().toString();
@@ -86,6 +89,16 @@ public class MainActivity extends Activity {
             	for (int i = 0; i < len; i++){
             		speak(text_to_speech,ar[i]);	
             	}
+            	//Toast.makeText(getApplicationContext(), "Operación terminada",Toast.LENGTH_SHORT).show();
+            }
+         });
+        
+        btn_speak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            	//String toSpeak = txt_value.getText().toString();
+            	text_to_speech = set_voice(text_to_speech);
+            	speak(text_to_speech,txt_value.getText().toString());
             	//Toast.makeText(getApplicationContext(), "Operación terminada",Toast.LENGTH_SHORT).show();
             }
          });
